@@ -14,20 +14,20 @@ const Home = () => {
         <section className='home'>
             <div className='overlay'></div>
             <video src={video} muted autoPlay loop type="video/mp4"></video>
-        
+            
             <div className="homeContent container">
                 <div className="textDiv">
                     <span className="smallText">
-                        Our Packages
+                        OUR PACKAGES
                     </span>
                     <h1 className="homeTitle">
-                        Search your Holidays
+                        Search your Holiday
                     </h1>
                 </div>
 
-                <div className="cardDiv grid">
+                <div className="cardDiv">
                     <div className="destinationInput">
-                        <label htmlFor="city">Search your destination</label>
+                        <label htmlFor="city">Search your destination:</label>
                         <div className="input flex">
                             <input type="text" placeholder="Enter name here..."/>
                             <GrLocation className="icon"/>
@@ -37,7 +37,7 @@ const Home = () => {
                     <div className="dateInput">
                         <label htmlFor="date">Select your date:</label>
                         <div className="input flex">
-                            <input type="date"/>
+                            <input type="date" placeholder="dd/mm/yyyy"/>
                         </div>
                     </div>
 

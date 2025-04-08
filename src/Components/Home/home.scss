@@ -48,7 +48,7 @@
         display: flex;
         row-gap: 3rem;
         flex-direction: column;
-        align-items: stretch;
+        align-items: center;
         justify-content: center;
         margin: auto;
         color: var(--whiteColor);
@@ -56,30 +56,42 @@
 
         .textDiv {
             padding: 2rem 0;
+            text-align: left;
+            width: 100%;
+            max-width: 1000px;
 
             .smallText {
-                font-size: 13px;
+                font-size: 18px;
                 text-transform: uppercase;
+                font-weight: 600;
             }
 
             .homeTitle {
                 position: relative;
-                font-size: 1.8rem;
+                font-size: 3rem;
+                font-weight: 700;
+                line-height: 1.1;
+                margin-top: 0.5rem;
             }
         }
 
         .cardDiv {
             position: relative;
-            padding: 2rem 1rem;
+            padding: 2rem 2rem;
             background: var(--whiteColor);
             border-radius: 10px;
+            width: 100%;
+            max-width: 1000px;
+            box-shadow: 0 2px 8px 4px rgba(178, 178, 178, 0.45);
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
             gap: 1rem;
 
             label {
                 display: block;
                 color: var(--textColor);
                 padding-bottom: 10px;
-                font-size: 13px;
+                font-size: 15px;
                 font-weight: 500;
             }
 
@@ -98,7 +110,7 @@
                 height: 40px;
                 padding: 0 1rem;
                 background: var(--inputColor);
-                border-radius: 3rem;
+                border-radius: 0.5rem;
 
                 input {
                     background: none;
@@ -131,12 +143,14 @@
             width: max-content;
             bottom: -0.7rem;
             column-gap: .8rem;
-            padding: 5px 1rem;
+            padding: 8px 1.5rem;
             border-radius: 3rem;
             left: 50%;
             transform: translate(-50%);
             justify-content: center;
             cursor: pointer;
+            color: var(--whiteColor);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
 
             &:hover {
                 background: var(--PrimaryColor);
@@ -147,16 +161,19 @@
             }
 
             span {
-                font-size: 13px;
+                font-size: 14px;
+                font-weight: 600;
             }
         }
 
         .homeFooterIcons {
             width: 100%;
+            max-width: 1000px;
             justify-content: space-between;
+            margin-top: 1rem;
 
             .icon {
-                font-size: 20px;
+                font-size: 22px;
                 margin: 0 5px;
                 color: var(--whiteColor);
                 font-weight: 600;
@@ -170,34 +187,33 @@
 }
 
 /* Media Queries */
+@media screen and (min-width: 320px) {
+    .home {
+        .homeContent {
+            .cardDiv {
+                grid-template-columns: repeat(1, 1fr);
+            }
+        }
+    }
+}
+
 @media screen and (min-width: 500px) {
     .home {
         .homeContent {
             .textDiv {
                 .smallText {
-                    font-size: 16px;
+                    font-size: 18px;
                 }
 
                 .homeTitle {
                     position: relative;
-                    font-size: 2.3rem;
+                    font-size: 3.5rem;
                     width: max-content;
-
-                    &::after {
-                        position: absolute;
-                        content: '';
-                        background: var(--SecondaryColor);
-                        height: 5px;
-                        width: 145px;
-                        right: 0px;
-                        bottom: 5px;
-                        z-index: -1;
-                    }
                 }
             }
 
             .cardDiv {
-                grid-template-columns: repeat(2,1fr);
+                grid-template-columns: repeat(2, 1fr);
             }
         }
     }
@@ -207,8 +223,9 @@
     .home {
         .homeContent {
             .cardDiv {
-                padding: 2rem 1rem;
-                grid-template-columns: repeat(3,1fr);
+                padding: 2rem;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 1.5rem;
             }
         }
     }
@@ -229,8 +246,8 @@
             padding-right: 0;
 
             .cardDiv {
-                padding: 2rem 1rem;
-                grid-template-columns: repeat(3,1fr);
+                padding: 2rem;
+                grid-template-columns: repeat(3, 1fr);
                 gap: 1.5rem;
 
                 .input {
