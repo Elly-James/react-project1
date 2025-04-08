@@ -10,17 +10,18 @@
     --inputColor: rgb(239, 239, 239);
     --bodyColor: rgb(240, 240, 246);
     --cardBG: rgb(225, 225, 235);
-  }
+}
 
-  .home{
+.home {
     width: 100%;
+    height: 100vh;
     position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
     margin: auto;
 
-    .overlay{
+    .overlay {
         position: absolute;
         height: 100%;
         width: 100%;
@@ -31,7 +32,7 @@
         mix-blend-mode: hard-light;
     }
 
-    video{
+    video {
         position: absolute;
         height: 100%;
         width: 100%;
@@ -40,10 +41,10 @@
         object-fit: cover;
     }
 
-    .homeContent{
+    .homeContent {
         width: 100%;
         height: max-content;
-        padding: 8rem 1.5 rem 3 rem;
+        padding: 8rem 1.5rem 3rem;
         display: flex;
         row-gap: 3rem;
         flex-direction: column;
@@ -53,28 +54,28 @@
         color: var(--whiteColor);
         z-index: 100;
 
-        .textDiv{
+        .textDiv {
             padding: 2rem 0;
 
-            .smallText{
+            .smallText {
                 font-size: 13px;
                 text-transform: uppercase;
             }
 
-            .homeTitle{
+            .homeTitle {
                 position: relative;
                 font-size: 1.8rem;
             }
         }
-    
-        .cardDiv{
-            position:relative;
+
+        .cardDiv {
+            position: relative;
             padding: 2rem 1rem;
             background: var(--whiteColor);
             border-radius: 10px;
             gap: 1rem;
 
-            label{
+            label {
                 display: block;
                 color: var(--textColor);
                 padding-bottom: 10px;
@@ -82,92 +83,160 @@
                 font-weight: 500;
             }
 
-            .label_total{
+            .label_total {
                 justify-content: space-between;
                 align-items: center;
 
-                .total{
+                .total {
                     color: var(--textColor);
                     font-size: 18px;
                     padding-bottom: 10px;
                 }
             }
 
-            .input{
+            .input {
                 height: 40px;
                 padding: 0 1rem;
                 background: var(--inputColor);
                 border-radius: 3rem;
-                
-                input{
+
+                input {
                     background: none;
                     border: none;
                     outline: none;
                     width: 100%;
                     font-size: 13px;
                     font-weight: 500;
-                    &::placeholder{
+
+                    &::placeholder {
                         font-size: 13px;
                     }
                 }
 
-                .icon{
+                .icon {
                     font-size: 18px;
-                    color: var(--PrimaryColor)
-                    !important;
+                    color: var(--PrimaryColor) !important;
                     margin-left: 10px;
                 }
 
-                .input[type=range]{
+                input[type=range] {
                     background: blue;
                 }
             }
-        
-            .searchOption{
-                position: absolute;
-                background: var(--gradientColor);
-                width: max-content;
-                bottom: -0.7rem;
-                column-gap: .8rem;
-                padding: 5px 1rem;
-                border-radius: 3rem;
-                left: 50%;
-                transform: translate(-50%);
-                justify-content: center;
-                cursor: pointer;
+        }
 
-                &:hover{
-                    background: var(--PrimaryColor);
-                }
+        .searchOptions {
+            position: absolute;
+            background: var(--gradientColor);
+            width: max-content;
+            bottom: -0.7rem;
+            column-gap: .8rem;
+            padding: 5px 1rem;
+            border-radius: 3rem;
+            left: 50%;
+            transform: translate(-50%);
+            justify-content: center;
+            cursor: pointer;
 
-                .icon{
-                    font-size: 18px;
-                }
-
-                span{
-                    font-size: 13px;
-                }
+            &:hover {
+                background: var(--PrimaryColor);
             }
 
+            .icon {
+                font-size: 18px;
+            }
+
+            span {
+                font-size: 13px;
+            }
         }
-        
-        .homeFooterIcons{
+
+        .homeFooterIcons {
             width: 100%;
             justify-content: space-between;
-            
-            .icon{
+
+            .icon {
                 font-size: 20px;
                 margin: 0 5px;
                 color: var(--whiteColor);
                 font-weight: 600;
-                &:hover{
+
+                &:hover {
                     color: var(--PrimaryColor);
                 }
             }
         }
-    
     }
-
 }
 
-// MEDIA QUERIES =========================>
+/* Media Queries */
+@media screen and (min-width: 500px) {
+    .home {
+        .homeContent {
+            .textDiv {
+                .smallText {
+                    font-size: 16px;
+                }
+
+                .homeTitle {
+                    position: relative;
+                    font-size: 2.3rem;
+                    width: max-content;
+
+                    &::after {
+                        position: absolute;
+                        content: '';
+                        background: var(--SecondaryColor);
+                        height: 5px;
+                        width: 145px;
+                        right: 0px;
+                        bottom: 5px;
+                        z-index: -1;
+                    }
+                }
+            }
+
+            .cardDiv {
+                grid-template-columns: repeat(2,1fr);
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 660px) {
+    .home {
+        .homeContent {
+            .cardDiv {
+                padding: 2rem 1rem;
+                grid-template-columns: repeat(3,1fr);
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 940px) {
+    .home {
+        height: 85vh;
+    }
+}
+
+@media screen and (min-width: 1240px) {
+    .home {
+        height: 95vh;
+
+        .homeContent {
+            padding-left: 0;
+            padding-right: 0;
+
+            .cardDiv {
+                padding: 2rem 1rem;
+                grid-template-columns: repeat(3,1fr);
+                gap: 1.5rem;
+
+                .input {
+                    margin-bottom: 1rem;
+                }
+            }
+        }
+    }
+}

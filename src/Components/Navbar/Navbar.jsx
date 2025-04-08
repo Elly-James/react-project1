@@ -1,11 +1,12 @@
-import React, { useState } from 'react';
-import '/navbar.css';
+import React, { useState, useEffect } from 'react';
+import './navbar.scss';
 import { MdOutlineTravelExplore } from 'react-icons/md';
 import { AiFillCloseCircle } from 'react-icons/ai';
 import { TbGridDots } from 'react-icons/tb';
 
 const Navbar = () => {
     const [active, setActive] = useState('navBar');
+    const [screenWidth, setScreenWidth] = useState(window.innerWidth);
 
     // Function to toggle navBar
     const showNav = () => {
@@ -17,12 +18,31 @@ const Navbar = () => {
         setActive('navBar');
     };
 
+    // Function to update screen width
+    const updateDimension = () => {
+        setScreenWidth(window.innerWidth);
+    };
+
+    useEffect(() => {
+        window.addEventListener('resize', updateDimension);
+        
+        // Reset navbar state when screen size changes to desktop view
+        if (screenWidth >= 769) {
+            setActive('navBar');
+        }
+        
+        return () => {
+            window.removeEventListener('resize', updateDimension);
+        };
+    }, [screenWidth]);
+
     return (
         <section className="navBarSection">
             <header className="header flex">
                 <div className="logoDiv">
                     <a href="#" className="logo flex">
-                        <h1><MdOutlineTravelExplore className="icon"/> Travel.</h1>
+                        <MdOutlineTravelExplore className="icon"/> 
+                        <span>Travel.</span>
                     </a>
                 </div>
                 <div className={active}>
@@ -42,7 +62,6 @@ const Navbar = () => {
                         <li className="navItem">
                             <a href="#" className="navLink">Pages</a>
                         </li>
-
                         <li className="navItem">
                             <a href="#" className="navLink">News</a>
                         </li>
@@ -50,9 +69,11 @@ const Navbar = () => {
                             <a href="#" className="navLink">Contact</a>
                         </li>
                     </ul>
-                    <button className='btn'>
-                        <a href="#">BOOK NOW</a>
-                    </button>
+                    <div className="btnContainer">
+                        <button className='bookBtn'>
+                            <a href="#">BOOK NOW</a>
+                        </button>
+                    </div>
                     <div onClick={removeNavbar} className="closeNavbar">
                         <AiFillCloseCircle className="icon" />
                     </div>
