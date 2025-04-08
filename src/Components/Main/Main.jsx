@@ -1,9 +1,9 @@
 import React from "react";
-import './main.scss'; // Changed from .css to .scss
+import './main.scss';
 import {HiOutlineLocationMarker} from 'react-icons/hi';
 import {HiOutlineClipboardCheck} from 'react-icons/hi';
 
-// Corrected image imports (remove spaces from filenames)
+// Image imports
 import img1 from '../../Assets/img1.jpg';
 import img2 from '../../Assets/img2.jpg';
 import img3 from '../../Assets/img3.jpg';
@@ -14,40 +14,40 @@ import img7 from '../../Assets/img7.jpg';
 import img8 from '../../Assets/img8.jpg';
 import img9 from '../../Assets/img9.jpg';
 
-const data = [ // Changed from Data to data (to match usage)
+const data = [
     {
         id: 1,
         imgSrc: img1,
         destTitle: "Bora Bora",
         location: "New Zealand",
-        grade: "Cultural Relax",
+        grade: "CULTURAL RELAX",
         fees: "$700",
-        description: "The epitome of romance, Bora Bora is a tropical paradise with stunning turquoise waters, luxurious overwater bungalows, and breathtaking sunsets."
+        description: "The epitome of romance, Bora Bora is one of the best travel destinations in the World. This place is known for its luxurious stays and adventurous activities."
     },
     {
         id: 2,
         imgSrc: img2,
         destTitle: "Machu Picchu",
         location: "Peru",
-        grade: "Cultural Relax",
+        grade: "CULTURAL RELAX",
         fees: "$600",
-        description: "Huayna Picchu is an ancient Incan citadel nestled in the Andes Mountains. It's a UNESCO World Heritage site with breathtaking views and rich history."
+        description: "Huayna Picchu is a mountain in Peru, rising over Machu Picchu, the so-called Lost City of Incas. This place is popular among tourists as the sunrise from the Sun Gate is simply spectacular."
     },
     {
         id: 3,
         imgSrc: img3,
-        destTitle: "Great Wall",
-        location: "China",
-        grade: "Cultural Relax",
+        destTitle: "Great Barrier Reef",
+        location: "Australia",
+        grade: "CULTURAL RELAX",
         fees: "$700",
-        description: "The Great Wall of China is a UNESCO World Heritage site and one of the most iconic landmarks in the world, offering stunning views and rich history."
+        description: "One of the most remarkable Australian natural gifts is the Great Barrier Reef. The hallmark of this place is 'lavish' and 'beauty'. Always interesting to be in this place."
     },
     {
         id: 4,
         imgSrc: img4,
         destTitle: "Grand Canyon",
         location: "USA",
-        grade: "Cultural Relax",
+        grade: "CULTURAL RELAX",
         fees: "$700",
         description: "The Grand Canyon is a natural wonder that offers breathtaking views, hiking trails, and opportunities for adventure."
     },
@@ -56,7 +56,7 @@ const data = [ // Changed from Data to data (to match usage)
         imgSrc: img5,
         destTitle: "Eiffel Tower",
         location: "France",
-        grade: "Cultural Relax",
+        grade: "CULTURAL RELAX",
         fees: "$700",
         description: "The Eiffel Tower is an iconic symbol of Paris, offering stunning views of the city and a chance to experience the romance of Paris."
     },
@@ -65,7 +65,7 @@ const data = [ // Changed from Data to data (to match usage)
         imgSrc: img6,
         destTitle: "Santorini",
         location: "Greece",
-        grade: "Cultural Relax",
+        grade: "CULTURAL RELAX",
         fees: "$700",
         description: "Santorini is a stunning island in Greece known for its white-washed buildings, crystal-clear waters, and breathtaking sunsets."
     },
@@ -74,7 +74,7 @@ const data = [ // Changed from Data to data (to match usage)
         imgSrc: img7,
         destTitle: "Bali Island",
         location: "Indonesia",
-        grade: "Cultural Relax",
+        grade: "CULTURAL RELAX",
         fees: "$500",
         description: "Bali Island is a tropical paradise known for its stunning beaches, lush landscapes, and vibrant culture."
     },
@@ -83,7 +83,7 @@ const data = [ // Changed from Data to data (to match usage)
         imgSrc: img8,
         destTitle: "Great Barrier Reef",
         location: "Australia",
-        grade: "Cultural Relax",
+        grade: "CULTURAL RELAX",
         fees: "$700",
         description: "The Great Barrier Reef is the world's largest coral reef system, offering stunning marine life and vibrant coral reefs."
     },
@@ -92,7 +92,7 @@ const data = [ // Changed from Data to data (to match usage)
         imgSrc: img9,
         destTitle: "Cappadocia",
         location: "Turkey",
-        grade: "Cultural Relax",
+        grade: "CULTURAL RELAX",
         fees: "$600",
         description: "Cappadocia is a unique region in Turkey known for its surreal landscapes, fairy chimneys, and ancient cave dwellings."
     }
@@ -103,11 +103,11 @@ const Main = () => {
         <section className="main container section">
             <div className="secTitle">
                 <h3 className="title">
-                    Most Visited Destinations
+                    Most visited destinations
                 </h3>
             </div>
 
-            <div className="secContent grid">
+            <div className="secContent">
                 {data.map(({ id, imgSrc, destTitle, location, grade, fees, description }) => { 
                     return (
                         <div className="singleDestination" key={id}>
@@ -120,6 +120,7 @@ const Main = () => {
                                     <HiOutlineLocationMarker className="icon" />
                                     <span className="name">{location}</span>
                                 </span>
+                                
                                 <div className="fees flex">
                                     <div className="grade">
                                         <span>{grade} <small>+1</small></span>
@@ -128,9 +129,11 @@ const Main = () => {
                                         <h5>{fees}</h5>
                                     </div>
                                 </div>
+                                
                                 <div className="desc">
                                     <p>{description}</p>
                                 </div>
+                                
                                 <button className="btn flex">
                                     DETAILS <HiOutlineClipboardCheck className="icon" />
                                 </button>
