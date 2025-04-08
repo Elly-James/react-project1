@@ -1,6 +1,6 @@
 import React from "react";
-import './footer.css'
-import video2 from '../../Assets/video (2).mp4'
+import './footer.scss'
+import video from '../../Assets/video.mp4'
 import { FiSend } from 'react-icons/fi'
 import { MdOutlineTravelExplore } from 'react-icons/md'
 import { AiOutlineTwitter } from 'react-icons/ai'
@@ -14,7 +14,7 @@ const Footer = () => {
     return (
         <section className='footer'>
             <div className="videoDiv">
-                <video src={video2} loop autoPlay muted type="video/mp4"></video> //revisit.
+                <video src={video} loop autoPlay muted type="video/mp4"></video>
             </div>
 
             <div className="secContent container">
@@ -35,13 +35,13 @@ const Footer = () => {
                 <div className="footerCard flex">
                     <div className="footerIntro flex">
                        <div className="logoDiv">
-                        <a href="#" className='logo flex'> revisit
-                            <MdOutlineTravelExplore className='icon' /> Travel.
-                        </a>
+                            <a href="#" className='logo flex'> 
+                                <MdOutlineTravelExplore className='icon' /> Travel.
+                            </a>
                         </div> 
 
                        <div className="footerParagraph">
-                           // revisit 
+                           
                         </div> 
 
                         <div className="footerSocials flex">
