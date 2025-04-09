@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import './navbar.scss';
 import { MdOutlineTravelExplore } from 'react-icons/md';
 import { AiFillCloseCircle } from 'react-icons/ai';
@@ -40,38 +41,32 @@ const Navbar = () => {
         <section className="navBarSection">
             <header className="header flex">
                 <div className="logoDiv">
-                    <a href="#" className="logo flex">
+                    <Link to="/" className="logo flex">
                         <MdOutlineTravelExplore className="icon"/> 
                         <span>Travel.</span>
-                    </a>
+                    </Link>
                 </div>
                 <div className={active}>
                     <ul className="navLists flex">
                         <li className="navItem">
-                            <a href="#" className="navLink">Home</a>
+                            <Link to="/" className="navLink">Home</Link>
                         </li>
                         <li className="navItem">
-                            <a href="#" className="navLink">Packages</a>
+                            <Link to="/kenyan-holidays" className="navLink">Kenyan Holidays</Link>
                         </li>
                         <li className="navItem">
-                            <a href="#" className="navLink">Shop</a>
+                            <Link to="/international-holidays" className="navLink">International Holidays</Link>
                         </li>
                         <li className="navItem">
-                            <a href="#" className="navLink">About</a>
+                            <Link to="/mycart" className="navLink">MyCart</Link>
                         </li>
                         <li className="navItem">
-                            <a href="#" className="navLink">Pages</a>
-                        </li>
-                        <li className="navItem">
-                            <a href="#" className="navLink">News</a>
-                        </li>
-                        <li className="navItem">
-                            <a href="#" className="navLink">Contact</a>
+                            <Link to="/pages" className="navLink">Pages</Link>
                         </li>
                     </ul>
                     <div className="btnContainer">
                         <button className='bookBtn'>
-                            <a href="#">BOOK NOW</a>
+                            <Link to="/book-now">BOOK NOW</Link>
                         </button>
                     </div>
                     <div onClick={removeNavbar} className="closeNavbar">

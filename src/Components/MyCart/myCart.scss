@@ -1,0 +1,341 @@
+.myCart {
+    padding: 2rem 0;
+  
+    .secTitle {
+      text-align: center;
+      margin-bottom: 2rem;
+  
+      .title {
+        font-size: 2rem;
+        color: var(--primary-color);
+      }
+  
+      .subtitle {
+        color: var(--text-color-light);
+      }
+    }
+  
+    .emptyCart {
+      text-align: center;
+      padding: 3rem 0;
+  
+      p {
+        margin-bottom: 1.5rem;
+        font-size: 1.1rem;
+      }
+  
+      .btn {
+        display: inline-block;
+        margin: 0.5rem;
+        padding: 0.8rem 1.5rem;
+        background-color: var(--primary-color);
+        color: white;
+        border-radius: 5px;
+        text-decoration: none;
+        transition: background-color 0.3s ease;
+  
+        &:hover {
+          background-color: var(--primary-color-dark);
+        }
+      }
+    }
+  
+    .cartContent {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+  
+      @media (min-width: 992px) {
+        flex-direction: row;
+      }
+    }
+  
+    .cartItems {
+      flex: 2;
+  
+      .cartItem {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+        padding: 1.5rem;
+        margin-bottom: 1.5rem;
+        border-radius: 10px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  
+        @media (min-width: 768px) {
+          flex-direction: row;
+        }
+  
+        .itemImage {
+          flex: 1;
+          
+          img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 8px;
+          }
+        }
+  
+        .itemDetails {
+          flex: 2;
+  
+          h4 {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+            color: var(--text-color);
+          }
+  
+          .location {
+            margin-bottom: 0.5rem;
+            color: var(--text-color-light);
+            font-size: 0.9rem;
+  
+            .icon {
+              margin-right: 0.3rem;
+            }
+          }
+  
+          .duration {
+            color: var(--text-color-light);
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+          }
+  
+          .price {
+            color: var(--primary-color);
+            font-weight: 600;
+            font-size: 1.1rem;
+            margin: 0.5rem 0;
+          }
+  
+          .description {
+            color: var(--text-color-light);
+            font-size: 0.9rem;
+            line-height: 1.5;
+            margin: 1rem 0;
+          }
+  
+          .removeBtn {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 1rem;
+            background-color: #ff4444;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+  
+            &:hover {
+              background-color: #cc0000;
+            }
+          }
+        }
+  
+        .bookingForm {
+          flex: 1.5;
+          padding: 1rem;
+          background-color: #f9f9f9;
+          border-radius: 8px;
+  
+          h5 {
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+            color: var(--text-color);
+          }
+  
+          .formGroup {
+            margin-bottom: 1rem;
+  
+            label {
+              display: block;
+              margin-bottom: 0.3rem;
+              font-size: 0.9rem;
+              color: var(--text-color);
+            }
+  
+            input, textarea {
+              width: 100%;
+              padding: 0.6rem;
+              border: 1px solid #ddd;
+              border-radius: 4px;
+              font-size: 0.9rem;
+  
+              &:focus {
+                outline: none;
+                border-color: var(--primary-color);
+              }
+            }
+  
+            textarea {
+              min-height: 80px;
+              resize: vertical;
+            }
+          }
+  
+          .confirmBtn {
+            width: 100%;
+            padding: 0.8rem;
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+  
+            &:hover {
+              background-color: var(--primary-color-dark);
+            }
+          }
+        }
+      }
+    }
+  
+    .paymentSection {
+      flex: 1;
+  
+      .summaryCard {
+        padding: 1.5rem;
+        border-radius: 10px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        background-color: #f9f9f9;
+  
+        h4 {
+          margin-bottom: 1.5rem;
+          font-size: 1.2rem;
+          color: var(--text-color);
+        }
+  
+        .summaryDetails {
+          margin-bottom: 1.5rem;
+  
+          .summaryItem {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #eee;
+  
+            &:last-child {
+              border-bottom: none;
+            }
+          }
+  
+          .summaryTotal {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 2px solid #ddd;
+            font-weight: 600;
+            font-size: 1.1rem;
+          }
+        }
+  
+        .conflictWarning {
+          padding: 0.8rem;
+          margin-bottom: 1.5rem;
+          background-color: #fff3cd;
+          border-left: 4px solid #ffc107;
+          color: #856404;
+          font-size: 0.9rem;
+        }
+  
+        .paymentForm {
+          h4 {
+            margin-bottom: 1rem;
+          }
+  
+          .paymentOptions {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+  
+            .paymentOption {
+              flex: 1;
+              padding: 0.8rem;
+              border: 1px solid #ddd;
+              border-radius: 5px;
+              text-align: center;
+              cursor: pointer;
+              transition: all 0.3s ease;
+  
+              input {
+                display: none;
+              }
+  
+              &.active {
+                border-color: var(--primary-color);
+                background-color: rgba(0, 123, 255, 0.1);
+              }
+            }
+          }
+  
+          .cardDetails {
+            margin-bottom: 1.5rem;
+  
+            .formRow {
+              display: flex;
+              gap: 1rem;
+              margin-bottom: 1rem;
+  
+              .formGroup {
+                flex: 1;
+              }
+            }
+  
+            .formGroup {
+              margin-bottom: 1rem;
+  
+              label {
+                display: block;
+                margin-bottom: 0.3rem;
+                font-size: 0.9rem;
+                color: var(--text-color);
+              }
+  
+              input {
+                width: 100%;
+                padding: 0.6rem;
+                border: 1px solid #ddd;
+                border-radius: 4px;
+                font-size: 0.9rem;
+  
+                &:focus {
+                  outline: none;
+                  border-color: var(--primary-color);
+                }
+              }
+            }
+          }
+  
+          .payBtn {
+            width: 100%;
+            padding: 0.8rem;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+  
+            &:hover {
+              background-color: #218838;
+            }
+          }
+        }
+      }
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .paymentForm {
+      .formRow {
+        flex-direction: column;
+        gap: 0;
+      }
+    }
+  }

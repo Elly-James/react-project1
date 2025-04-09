@@ -1,0 +1,354 @@
+:root {
+  --PrimaryColor: hsl(199, 100%, 33%);
+  --SecondaryColor: hsl(187, 85%, 43%);
+  --gradientColor: linear-gradient(to right, hsl(187, 85%, 43%), hsl(199, 100%, 33%));
+  --whiteColor: hsl(0, 0%, 100%);
+  --blackColor: hsl(201, 33%, 16%);
+  --textColor: hsl(240, 4%, 36%);
+  --whiteColorDeam: hsl(0, 0%, 93%);
+  --greyText: rgb(190, 190, 190);
+  --inputColor: rgb(239, 239, 239);
+  --bodyColor: rgb(240, 240, 246);
+  --cardBG: rgb(225, 225, 235);
+  --cardHover: rgb(255, 255, 255);
+}
+
+.internationalHolidays {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 0;
+  
+  .secTitle {
+    .title {
+      position: relative;
+      width: max-content;
+      color: var(--blackColor);
+      font-size: 1.8rem;
+      margin-bottom: 2rem;
+      font-weight: 600;
+      
+      &::after {
+        position: absolute;
+        content: '';
+        background: var(--SecondaryColor);
+        height: 5px;
+        width: 120px;
+        left: 0;
+        bottom: -5px;
+        border-radius: 10px;
+      }
+    }
+  }
+  
+  .destinationsContainer, .packagesContainer {
+    position: relative;
+    margin-bottom: 3rem;
+    
+    .scrollControls {
+      display: flex;
+      align-items: center;
+      position: relative;
+      
+      .scrollButton {
+        background: var(--PrimaryColor);
+        color: var(--whiteColor);
+        border: none;
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        z-index: 2;
+        transition: all 0.3s ease;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        
+        &:hover {
+          background: var(--SecondaryColor);
+          transform: translateY(-50%) scale(1.1);
+        }
+        
+        &.left {
+          left: -20px;
+        }
+        
+        &.right {
+          right: -20px;
+        }
+      }
+    }
+    
+    .destinationsScroll, .packagesScroll {
+      display: flex;
+      overflow-x: auto;
+      scroll-behavior: smooth;
+      gap: 1.5rem;
+      padding: 1rem 0;
+      scrollbar-width: none; /* Firefox */
+      -ms-overflow-style: none; /* IE and Edge */
+      
+      &::-webkit-scrollbar {
+        display: none; /* Chrome, Safari, Opera */
+      }
+      
+      .singleDestination {
+        flex: 0 0 300px;
+        height: 100%;
+        display: grid;
+        row-gap: 10px;
+        border-radius: 10px;
+        align-items: center;
+        background: var(--cardBG);
+        box-shadow: 0 2px 4px rgba(140, 140, 141, 0.549);
+        overflow: hidden;
+        transition: 0.3s ease;
+        
+        &:hover {
+          background: var(--cardHover);
+          box-shadow: 1px 4px 4px rgba(85, 85, 114, 0.549);
+          transform: translateY(-5px);
+        }
+        
+        .imageDiv {
+          height: 200px;
+          width: 100%;
+          overflow: hidden;
+          
+          img {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+            transition: 2s ease;
+          }
+        }
+        
+        &:hover img {
+          transform: scale(1.1);
+        }
+        
+        .cardInfo {
+          padding: 1.5rem;
+          
+          .destTitle {
+            color: var(--blackColor);
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+          }
+          
+          .continent {
+            gap: .5rem;
+            margin-bottom: 1rem;
+            
+            .icon {
+              color: var(--PrimaryColor);
+              font-size: 18px;
+            }
+            
+            .name {
+              color: var(--textColor);
+              font-weight: 500;
+              font-size: 14px;
+            }
+          }
+          
+          .fees {
+            width: 100%;
+            justify-content: space-between;
+            padding: 0.5rem 0;
+            margin: 1rem 0;
+            border-top: 1.5px solid var(--greyText);
+            border-bottom: 1.5px solid var(--greyText);
+            
+            .grade {
+              color: var(--textColor);
+              max-width: 100px;
+              line-height: 20px;
+              display: flex;
+              align-items: center;
+              font-size: 13px;
+              font-weight: 500;
+              
+              small {
+                text-align: center;
+                background: var(--gradientColor);
+                border-radius: 1rem;
+                color: var(--whiteColor);
+                padding: 1px 10px;
+                font-size: 10px;
+                margin-left: 5px;
+              }
+            }
+            
+            .price {
+              font-size: 1.5rem;
+              font-weight: 600;
+              color: var(--blackColor);
+            }
+          }
+          
+          .desc {
+            font-size: 13.5px;
+            color: var(--textColor);
+            font-weight: 400;
+            margin-bottom: 1rem;
+            height: 80px;
+            overflow: hidden;
+            line-height: 1.5;
+          }
+          
+          .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            padding: 0.6rem 1.5rem;
+            background: var(--PrimaryColor);
+            color: var(--whiteColor);
+            font-weight: 600;
+            border: none;
+            border-radius: 3rem;
+            cursor: pointer;
+            transition: 0.3s ease;
+            
+            &:hover {
+              background: var(--SecondaryColor);
+            }
+            
+            &.selected {
+              background: var(--SecondaryColor);
+              cursor: not-allowed;
+            }
+            
+            .icon {
+              font-size: 18px;
+            }
+          }
+        }
+      }
+    }
+  }
+  
+  .addDestinationForm {
+    background: var(--whiteColorDeam);
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(85, 85, 114, 0.2);
+    
+    h3 {
+      font-size: 1.5rem;
+      margin-bottom: 1.5rem;
+      color: var(--blackColor);
+      position: relative;
+      width: max-content;
+      
+      &::after {
+        position: absolute;
+        content: '';
+        background: var(--SecondaryColor);
+        height: 3px;
+        width: 50%;
+        left: 0;
+        bottom: -5px;
+        border-radius: 10px;
+      }
+    }
+    
+    form {
+      .formRow {
+        display: flex;
+        gap: 1rem;
+        margin-bottom: 1rem;
+        flex-wrap: wrap;
+        
+        @media (max-width: 768px) {
+          flex-direction: column;
+          gap: 0;
+        }
+        
+        .formGroup {
+          flex: 1;
+          min-width: 200px;
+        }
+      }
+      
+      .formGroup {
+        margin-bottom: 1.25rem;
+        
+        label {
+          display: block;
+          font-size: 0.9rem;
+          margin-bottom: 0.5rem;
+          color: var(--textColor);
+          font-weight: 500;
+        }
+        
+        input, select, textarea {
+          width: 100%;
+          padding: 0.75rem;
+          border: 1px solid var(--greyText);
+          border-radius: 5px;
+          font-size: 0.9rem;
+          
+          &:focus {
+            outline: none;
+            border-color: var(--PrimaryColor);
+          }
+        }
+        
+        textarea {
+          min-height: 100px;
+          resize: vertical;
+        }
+      }
+      
+      .submitBtn {
+        background: var(--PrimaryColor);
+        color: var(--whiteColor);
+        padding: 0.75rem 2rem;
+        border: none;
+        border-radius: 3rem;
+        cursor: pointer;
+        font-weight: 600;
+        font-size: 1rem;
+        transition: 0.3s ease;
+        margin-top: 1rem;
+        
+        &:hover {
+          background: var(--SecondaryColor);
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .internationalHolidays {
+    .destinationsContainer, .packagesContainer {
+      .scrollControls {
+        .scrollButton {
+          width: 30px;
+          height: 30px;
+          
+          &.left {
+            left: -10px;
+          }
+          
+          &.right {
+            right: -10px;
+          }
+        }
+      }
+      
+      .destinationsScroll, .packagesScroll {
+        .singleDestination {
+          flex: 0 0 280px;
+        }
+      }
+    }
+  }
+}
