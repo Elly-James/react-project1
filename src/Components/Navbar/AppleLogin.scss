@@ -1,0 +1,25 @@
+.appleLoginBtn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.6rem 1.5rem;
+    background: #000;
+    color: #fff;
+    border: none;
+    border-radius: 3rem;
+    cursor: pointer;
+    font-weight: 600;
+    transition: 0.3s ease;
+    width: 100%;
+
+    &:hover {
+        background: #333;
+    }
+
+    .appleIcon {
+        width: 20px;
+        height: 20px;
+        fill: currentColor;
+    }
+}
